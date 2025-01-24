@@ -54,7 +54,7 @@ export default function App() {
 
   // Clicking on a node will expand a sidebar with the description.
   const handleNodeClick = useCallback(
-    (event: React.MouseEvent, clickedNode: StepNode) => {
+    (event: React.MouseEvent, clickedNode: AppNode) => {
       console.log('clickedNode', clickedNode);
       if (selectedNode === null) {
         setSelectedNode(clickedNode);
