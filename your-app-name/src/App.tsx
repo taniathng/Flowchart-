@@ -11,6 +11,7 @@ import {
 } from '@xyflow/react';
 
 import '@xyflow/react/dist/style.css';
+import './App.css';
 
 import { initialNodes, nodeTypes } from './nodes';
 import { initialEdges, edgeTypes } from './edges';
@@ -74,12 +75,12 @@ export default function App() {
 
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
-      <header style={{flex:1}}>
+    <div className='app-container'>
+      <header className='app-header'>
         <h1>ReactFlowDemo</h1>
       </header>
-      <div style={{ display: 'flex', height: '80vh', flex:9 }}>
-        <div style={{ flex: 4}}>
+      <div className='app-main'>
+        <div className='app-flowchart' >
           <ReactFlow
             nodes={nodes}
             nodeTypes={nodeTypes}
@@ -97,7 +98,7 @@ export default function App() {
           </ReactFlow>
         </div>
         {selectedNode && (
-          <div style={{ flex: 1, padding: '10px', border: '3px solid #000000'}}>
+          <div className='app-sidebar'>
             <h3>Selected Node</h3>
             <p>ID: {selectedNode.id}</p>
             <p>Label: {selectedNode.data.label}</p>
